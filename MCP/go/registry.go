@@ -1,0 +1,37 @@
+package main
+
+import (
+	"github.com/amazon-timestream-query/mcp-server/config"
+	"github.com/amazon-timestream-query/mcp-server/models"
+	tools_x_amz_target_timestream_20181101_listtagsforresource "github.com/amazon-timestream-query/mcp-server/tools/x_amz_target_timestream_20181101_listtagsforresource"
+	tools_x_amz_target_timestream_20181101_query "github.com/amazon-timestream-query/mcp-server/tools/x_amz_target_timestream_20181101_query"
+	tools_x_amz_target_timestream_20181101_createscheduledquery "github.com/amazon-timestream-query/mcp-server/tools/x_amz_target_timestream_20181101_createscheduledquery"
+	tools_x_amz_target_timestream_20181101_deletescheduledquery "github.com/amazon-timestream-query/mcp-server/tools/x_amz_target_timestream_20181101_deletescheduledquery"
+	tools_x_amz_target_timestream_20181101_describescheduledquery "github.com/amazon-timestream-query/mcp-server/tools/x_amz_target_timestream_20181101_describescheduledquery"
+	tools_x_amz_target_timestream_20181101_updatescheduledquery "github.com/amazon-timestream-query/mcp-server/tools/x_amz_target_timestream_20181101_updatescheduledquery"
+	tools_x_amz_target_timestream_20181101_cancelquery "github.com/amazon-timestream-query/mcp-server/tools/x_amz_target_timestream_20181101_cancelquery"
+	tools_x_amz_target_timestream_20181101_describeendpoints "github.com/amazon-timestream-query/mcp-server/tools/x_amz_target_timestream_20181101_describeendpoints"
+	tools_x_amz_target_timestream_20181101_executescheduledquery "github.com/amazon-timestream-query/mcp-server/tools/x_amz_target_timestream_20181101_executescheduledquery"
+	tools_x_amz_target_timestream_20181101_tagresource "github.com/amazon-timestream-query/mcp-server/tools/x_amz_target_timestream_20181101_tagresource"
+	tools_x_amz_target_timestream_20181101_untagresource "github.com/amazon-timestream-query/mcp-server/tools/x_amz_target_timestream_20181101_untagresource"
+	tools_x_amz_target_timestream_20181101_listscheduledqueries "github.com/amazon-timestream-query/mcp-server/tools/x_amz_target_timestream_20181101_listscheduledqueries"
+	tools_x_amz_target_timestream_20181101_preparequery "github.com/amazon-timestream-query/mcp-server/tools/x_amz_target_timestream_20181101_preparequery"
+)
+
+func GetAll(cfg *config.APIConfig) []models.Tool {
+	return []models.Tool{
+		tools_x_amz_target_timestream_20181101_listtagsforresource.CreateListtagsforresourceTool(cfg),
+		tools_x_amz_target_timestream_20181101_query.CreateQueryTool(cfg),
+		tools_x_amz_target_timestream_20181101_createscheduledquery.CreateCreatescheduledqueryTool(cfg),
+		tools_x_amz_target_timestream_20181101_deletescheduledquery.CreateDeletescheduledqueryTool(cfg),
+		tools_x_amz_target_timestream_20181101_describescheduledquery.CreateDescribescheduledqueryTool(cfg),
+		tools_x_amz_target_timestream_20181101_updatescheduledquery.CreateUpdatescheduledqueryTool(cfg),
+		tools_x_amz_target_timestream_20181101_cancelquery.CreateCancelqueryTool(cfg),
+		tools_x_amz_target_timestream_20181101_describeendpoints.CreateDescribeendpointsTool(cfg),
+		tools_x_amz_target_timestream_20181101_executescheduledquery.CreateExecutescheduledqueryTool(cfg),
+		tools_x_amz_target_timestream_20181101_tagresource.CreateTagresourceTool(cfg),
+		tools_x_amz_target_timestream_20181101_untagresource.CreateUntagresourceTool(cfg),
+		tools_x_amz_target_timestream_20181101_listscheduledqueries.CreateListscheduledqueriesTool(cfg),
+		tools_x_amz_target_timestream_20181101_preparequery.CreatePreparequeryTool(cfg),
+	}
+}
